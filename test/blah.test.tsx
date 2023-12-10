@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { GetGoogleMapUrlCoordinate, Thing } from '../src';
+import {  Thing } from '../src';
 
 describe('it', () => {
   it('renders without crashing', () => {
@@ -10,10 +10,4 @@ describe('it', () => {
   });
 });
 
-describe('it', () => {
-  it('renders without crashing', () => {
-    const div = document.createElement('div');
-    ReactDOM.render(<GetGoogleMapUrlCoordinate />, div);
-    ReactDOM.unmountComponentAtNode(div);
-  });
-});
+

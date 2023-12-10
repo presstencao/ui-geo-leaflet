@@ -34,18 +34,12 @@ export function getLatLngStringFromArray(
 export function getLatLngStringFromString(coordinates: string): string {
   return coordinates;
 }
-export function getGoogleMapUrlCordinates(url: string): string {
-  // https://www.google.com/maps/place/Rua+Americana,+142+-+Conj.+Hab.+Pres.+Castelo+Branco,+Carapicu%C3%ADba+-+SP,+06327-320/@-23.5348058,-46.8318442,15z/data=!4m6!3m5!1s0x94cefe2b3c6e1571:0xb2d32809856b3831!8m2!3d-23.5348058!4d-46.8215443!16s%2Fg%2F11c4c504wq?authuser=0&entry=ttu
-  return (
-    url &&
-    url.replace(
-      '{lat},{lng}',
-      getLatLngString(
-        getCoordinates(
-          parseFloat(url.split('@')[1].split(',')[0]),
-          parseFloat(url.split('@')[1].split(',')[1])
-        )
-      )
-    )
-  );
+export function getGoogleMapUrlCoordinates(
+  url: string
+): { lat: string; long: string } {
+  const coordinates = {
+    lat: url.split('@')[1].split(',')[0],
+    long: url.split('@')[1].split(',')[1],
+  };
+  return coordinates;
 }

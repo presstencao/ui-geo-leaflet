@@ -1,13 +1,14 @@
 import * as React from 'react';
-import { getGoogleMapUrlCordinates } from './helpers/helpers';
+import { getGoogleMapUrlCoordinates as getGoogleMapUrlCoordinates } from './helpers/helpers';
+
 
 // Delete me
 export const Thing = () => {
   return <div>the snozzberries taste like snozzberries</div>;
 };
 
-export const GetGoogleMapUrlCoordinate = (url:string) =>{
-  const coordinates = getGoogleMapUrlCordinates(url);
+export const GetGoogleMapUrlCoordinate = (props:{url:string}):string => {
+  const coordinates = getGoogleMapUrlCoordinates(props.url);
 
-  return <span>{coordinates}</span>
+  return `lat:${coordinates.lat} long:${coordinates.long}`
 }
