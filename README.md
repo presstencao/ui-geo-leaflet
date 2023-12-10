@@ -164,3 +164,4 @@ An alternative to fixing this problem would be to remove aliases altogether and 
 # ui-geo-leaflet
 # ui-geo-leaflet
 # ui-geo-leaflet
+# ui-geo-leaflet
