@@ -34,16 +34,11 @@ export function getLatLngStringFromArray(
 export function getLatLngStringFromString(coordinates: string): string {
   return coordinates;
 }
-export function getGoogleMapUrlCoordinates(
-  url: string
-): { lat: string; long: string } {
-  if (url) {
-    const coordinates = {
-      lat: url.split('@')[1].split(',')[0],
-      long: url.split('@')[1].split(',')[1],
-    };
-    return coordinates;
-  } else {
-    throw new Error('Invalid URL');
-  }
+export function getGoogleMapUrlCoordinates(url: string): string {
+  const coordinates = {
+    lat: url && url.split('@')[1].split(',')[0],
+    long: url && url.split('@')[1].split(',')[1],
+  };
+
+  return `Lat: ${coordinates.lat}, long: ${coordinates.long}`;
 }

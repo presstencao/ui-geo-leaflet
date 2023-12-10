@@ -8,7 +8,9 @@ export const Thing = () => {
 };
 
 export const GetGoogleMapUrlCoordinate = (props:{url:string}):string => {
+  if(props.url === undefined){
+    return "No url"
+  }
   const coordinates = getGoogleMapUrlCoordinates(props.url);
-
-  return `lat:${coordinates.lat} long:${coordinates.long}`
+return `${coordinates}`
 }
