@@ -1,6 +1,7 @@
 import React from 'react';
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
 import { Coordinates, getGoogleMapUrlCoordinates as getGoogleMapUrlCoordinates } from './helpers/helpers';
+import 'leaflet/dist/leaflet.css';
 
 
 
@@ -21,7 +22,7 @@ return `${coordinates}`
 export function GetPointMap(props:{coordinates: Coordinates}) {
 
   return (
-    <MapContainer center={[props.coordinates.lat,props.coordinates.lng]} zoom={13} scrollWheelZoom={false}>
+    <MapContainer center={[props.coordinates.lat,props.coordinates.lng]} zoom={13} scrollWheelZoom={true} style={{width:'100%', height:'100%'}}>
     <TileLayer
       attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
       url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
