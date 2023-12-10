@@ -8,5 +8,6 @@ export const Thing = () => {
 
 export const GetGoogleMapUrlCoordinate = (url:string) =>{
   const coordinates = getGoogleMapUrlCordinates(url);
+
   return <span>{coordinates}</span>
 }

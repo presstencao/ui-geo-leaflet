@@ -35,12 +35,15 @@ export function getLatLngStringFromString(coordinates: string): string {
   return coordinates;
 }
 export function getGoogleMapUrlCordinates(url: string): string {
-  return url.replace(
-    '{lat},{lng}',
-    getLatLngString(
-      getCoordinates(
-        parseFloat(url.split('{lat}')[1].split(',')[0]),
-        parseFloat(url.split('{lng}')[1].split(',')[0])
+  return (
+    url &&
+    url.replace(
+      '{lat},{lng}',
+      getLatLngString(
+        getCoordinates(
+          parseFloat(url.split('{lat}')[1].split(',')[0]),
+          parseFloat(url.split('{lng}')[1].split(',')[0])
+        )
       )
     )
   );
