@@ -37,9 +37,13 @@ export function getLatLngStringFromString(coordinates: string): string {
 export function getGoogleMapUrlCoordinates(
   url: string
 ): { lat: string; long: string } {
-  const coordinates = {
-    lat: url.split('@')[1].split(',')[0],
-    long: url.split('@')[1].split(',')[1],
-  };
-  return coordinates;
+  if (url) {
+    const coordinates = {
+      lat: url.split('@')[1].split(',')[0],
+      long: url.split('@')[1].split(',')[1],
+    };
+    return coordinates;
+  } else {
+    throw new Error('Invalid URL');
+  }
 }

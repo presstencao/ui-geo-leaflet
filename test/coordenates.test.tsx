@@ -1,5 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
+import expect from 'expect';
 import { GetGoogleMapUrlCoordinate } from "../src";
 describe('it',() => {
     it('renders learn react terxt', () => {
